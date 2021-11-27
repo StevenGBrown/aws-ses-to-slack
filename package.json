@@ -1,0 +1,39 @@
+{
+  "name": "aws-ses-to-slack",
+  "version": "0.1.0",
+  "description": "Forward emails sent to an AWS SES domain to Slack",
+  "license": "MIT",
+  "author": {
+    "name": "Steven Brown",
+    "email": "StevenGBrown@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StevenGBrown/aws-ses-to-slack.git"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "esbuild index.js --bundle --external:aws-sdk --platform=node --target=node14 --sourcemap --outfile=dist/index.js",
+    "package": "npm run build && cd dist && bestzip aws-ses-to-slack.zip index.js index.js.map",
+    "lint": "eslint . --max-warnings 0 --ext .js,.ts"
+  },
+  "dependencies": {
+    "aws-sdk": "2.1037.0",
+    "axios": "0.24.0",
+    "form-data": "4.0.0",
+    "mailparser": "3.4.0"
+  },
+  "devDependencies": {
+    "bestzip": "2.2.0",
+    "esbuild": "0.13.8",
+    "eslint": "7.28.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "rimraf": "3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  }
+}
