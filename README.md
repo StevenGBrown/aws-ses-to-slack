@@ -8,7 +8,7 @@ I recommend using a subdomain for this, e.g. `slack.example.com`.
 
 - AWS account and credentials
 - Permission to add bots to the Slack workspace
-- Node 14
+- Node 16
 - npm 7
 
 ## First time setup
@@ -34,7 +34,7 @@ Instructions for installing in a new Slack workspace or AWS account.
 ### AWS
 
 - Open the AWS console.
-- Create a new Node 14 lambda and deploy the code to it (see How to Deploy).
+- Create a new Node 16 lambda and deploy the code to it (see How to Deploy).
 - SES
   - On the `Identity Management` -> `Domains` tab, add your domain and wait a few minutes for verification.
   - On the `Email Receiving` -> `Rule Sets` tab, select `Create a New Rule Set` then `Create Rule`.

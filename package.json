@@ -13,7 +13,7 @@
   },
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "esbuild index.js --bundle --external:aws-sdk --platform=node --target=node14 --sourcemap --outfile=dist/index.js",
+    "build": "esbuild index.js --bundle --external:aws-sdk --platform=node --target=node16 --sourcemap --outfile=dist/index.js",
     "package": "npm run build && cd dist && bestzip aws-ses-to-slack.zip index.js index.js.map",
     "lint": "eslint . --max-warnings 0 --ext .js,.ts"
   },
@@ -33,7 +33,7 @@
     "rimraf": "3.0.2"
   },
   "engines": {
-    "node": ">=14.0.0",
+    "node": ">=16.0.0",
     "npm": ">=7.0.0"
   }
 }
